@@ -2,13 +2,16 @@
 
 public int RecursiveMultiply(int a, int b) {
 	int sum = 0;
-	int[] memo = new int[a];
+	int[] memo = new int[a+1];
 	return RecursiveMultiply(a, b, sum);
 }
 
 public int RecursiveMultiply(int a, int b) {
-	if (a <= 1) {
+	if (a == 1) {
 		return b;
+	}
+	if (a == 0) {
+		return 0;
 	}
 
 	if (a % 2 == 1) {
