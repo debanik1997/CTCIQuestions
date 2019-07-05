@@ -1,5 +1,6 @@
 // 4.1) Route Between Nodes
 
+// BFS is better because you don't necessarily need to search through every node
 public boolean RouteBetweenNodes(Node root, Node end) {
 	Queue q = new Queue();
 	root.marked = true;

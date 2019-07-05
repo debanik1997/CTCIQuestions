@@ -4,20 +4,27 @@ public Set<Set<Integer>> PowerSet(Set<Integer> set) {
 	Set<Set<Integer>> result = new HashSet<Set<Integer>>();
 	Set<Integer> cur = new HashSet<Integer>();
 	result.add(cur);
-	PowerSet(set, result);
+	PowerSet(result, set);
 	return result;
 }
 
-public Set<Set<Integer>> PowerSet(Set<Integer> set, Set<Integer> cur, Set<Set<Integer>> result) {
-	if (result.count == 2^set.count) {
+public void PowerSet(Set<Set<Integer>> result, Set<Integer> set) {
+	if (set.empty()) {
 		return;
 	}
 
-	Iterator<Set<Integer>> itr = result.iterator(); 
-	while(itr.hasNext()){ 
-		Set<Integer> curSet = itr.next();
-		set.
+	int i = set.ElementAt(random.Next(set.Count));
+	set.remove(i);
 
+	foreach (Set<Integer> s : result) {
+		Set<Integer> newSet = new HashSet<Integer>();
+		foreach (int j : s) {
+			newSet.append(j);
+		}
+		newSet.append(i);
+		result.append(newSet)
 	}
+
+	return PowerSet(result, set);
 }
 
